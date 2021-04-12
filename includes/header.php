@@ -31,4 +31,33 @@ foreach ($pages as $p) {
 echo '</ul>'
 
 ?>
+
+<ul>
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (empty($_SESSION['username'])) {
+?>
+    <li>
+        <a href="register.php">Register</a>
+    </li>
+    <li>
+        <a href="login.php">Login</a>
+    </li>
+<?php
+}
+else { ?>
+    <li>
+        <a href="#"><?php echo $_SESSION['username']; ?></a>
+    </li>
+    <li>
+        <a href="logout.php">Logout</a>
+    </li>
+    <li>
+        <a href="admin-control.php">Admin Control Panel</a>
+    </li>
+<?php } ?>
+            </ul>
         </nav>

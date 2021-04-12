@@ -72,8 +72,8 @@ if ($valid) {
     $db = null;
 
     echo "User Saved!";
-    // // redirect to login
-    // header('location:login.php');
+
+    header('location:login.php');
 }
 
 

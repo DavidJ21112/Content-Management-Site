@@ -1,9 +1,9 @@
 <?php
 
-$username = $_POST['email'];
+$email = $_POST['email'];
 $password = $_POST['password'];
 
-include 'db.php';
+include 'includes/db-connect.php';
 $sql = "SELECT * FROM CMSusers WHERE email = :email";
 $cmd = $db->prepare($sql);
 $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
@@ -15,7 +15,7 @@ if (!empty($user)) {
     if (password_verify($password, $user['password'])) {
         session_start();
         $_SESSION['username'] = $email;
-        // header('location:games.php');
+        header('location:index.php');
     }
     else {
         header('location:login.php?invalid=true');
