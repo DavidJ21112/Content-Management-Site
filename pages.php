@@ -18,8 +18,10 @@ $pages = $cmd->fetchAll();
 echo '<table><thead><th>Id</th><th>Page Name</th></thead>';
 
 foreach ($pages as $p) {
-    echo '<tr><td>' . $p['pageId'] . '</td><td>' . $p['pageName'] . '</td></tr>';
-
+    echo '<tr><td>' . $p['pageId'] . '</td><td>' . $p['pageName'] . '</td>
+        <td><a href="page-edit.php?pageId=' . $p['pageId'] . '">Edit</a></td>
+        <td><a href="delete-page.php?pageId=' . $p['pageId'] . '">Delete</a></td></tr>';
+    
 }
 
 echo '</table>';
