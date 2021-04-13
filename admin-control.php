@@ -14,6 +14,9 @@ include 'includes/authenticate.php';
         <li>
             <a href="user-list.php">Manage Users</a>
         </li>
+        <li>
+            <a href="image-upload.php">Upload a Logo</a>
+        </li>
     </ul>
 
 </nav>

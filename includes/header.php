@@ -9,6 +9,7 @@
     <body>
         <header>
             <h1>David's Community</h1>
+            <img src="images/icon.jpg" alt="The wonderful icon of our community" height="200" width="200" />
         </header>
         <nav>
         <!-- Navigation goes here -->
