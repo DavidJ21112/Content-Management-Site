@@ -14,7 +14,7 @@ include 'includes/authenticate.php';
         <label for='pageContent'>Page Content (1000 Characters Max):</label>
         <textarea class="form-control" name="pageContent" id="pageContent" maxlength="1000" required ></textarea>
     </fieldset>
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary m-2">Save</button>
 </form>
 <?php
     include 'includes/footer.php';

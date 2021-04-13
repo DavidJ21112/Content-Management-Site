@@ -1,1 +1,39 @@
 /* Custom styles will go here. */
+@charset "UTF-8";
+
+.navbar {
+    margin-bottom: 30px;
+    background-color:plum;
+}
+
+.d-flex {
+    width: 100%;
+}
+
+.short {
+    width: 25%;
+}
+
+.profile {
+    background-color: rgba(152, 232, 243, 0.747);
+    border: 2px solid rebeccapurple;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.page {
+    background: skyblue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.page h3, .page p {
+    background: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+}

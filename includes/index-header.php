@@ -9,9 +9,9 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px;">
+        <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <div class="d-flex" style="width: 100%;">
+            <div class="d-flex">
             
                 <img src="images/icon.jpg" alt="The wonderful icon of our community" height="100" width="100" />
             
@@ -58,7 +58,7 @@ if (empty($_SESSION['username'])) {
 }
 else { ?>
     <li class="nav-item p-2">
-        <a class="nav-link" href="#"><?php echo $_SESSION['username']; ?></a>
+        <a class="nav-link profile" href="#"><?php echo $_SESSION['username']; ?></a>
     </li>
     <li class="nav-item p-2">
         <a class="nav-link" href="logout.php">Logout</a>

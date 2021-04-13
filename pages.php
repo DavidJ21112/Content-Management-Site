@@ -16,7 +16,7 @@ try {
     $pages = $cmd->fetchAll();
 
     // Display the data in a table.
-    echo '<table class="table"><thead><th>Id</th><th>Page Name</th><th></th><th></th></thead>';
+    echo '<table class="table table-striped table-hover"><thead class="table-dark"><th>Id</th><th>Page Name</th><th></th><th></th></thead>';
 
     foreach ($pages as $p) {
         echo '<tr><td>' . $p['pageId'] . '</td><td>' . $p['pageName'] . '</td>

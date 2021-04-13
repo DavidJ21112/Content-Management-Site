@@ -28,8 +28,8 @@ try {
 
     // If a pageId is present, the page's content will load from the database.
     if (!empty($pageId)){
-    echo '<h3>' . $pages['pageName'] . '</h3>';
-    echo '<p>' . $pages['pageContent'] . '</p>';
+    echo '<div class="page"><h3>' . $pages['pageName'] . '</h3>';
+    echo '<p>' . $pages['pageContent'] . '</p></div>';
     }
 }
 catch (exception $e) {

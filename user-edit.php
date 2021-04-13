@@ -31,23 +31,23 @@ else {
 ?>
 
 <form method="post" action="update-user.php" enctype="multipart/form-data">
-<fieldset>
+<fieldset class="form-group">
     <label for="email">Email Address: </label>
-    <input type="email" name="email" id="email" maxlength="50" required value="<?php $user['email']?>"></input>
+    <input class="form-control short" type="email" name="email" id="email" maxlength="50" required value="<?php $user['email']?>"></input>
 </fieldset>
-<fieldset>
+<fieldset class="form-group">
     <label for="password">Password: </label>
-    <input type="password" name="password" id="password" maxlength="255" required></input>
+    <input class="form-control short" type="password" name="password" id="password" maxlength="255" required></input>
 </fieldset>
-<fieldset>
+<fieldset class="form-group">
     <label for="conPass">Confirm Password: </label>
-    <input type="password" name="conPass" id="conPass" maxlength="255" required></input>
+    <input class="form-control short" type="password" name="conPass" id="conPass" maxlength="255" required></input>
 </fieldset>
     <!-- Just like with the pageId, best bad idea I could think of. -->
 <fieldset>
     <input name="userId" id="userId" value="<?php echo $userId ?>" type="hidden" readonly></input>
 </fieldset>
-<button>Save</button>
+<button class="btn btn-success m-2">Save</button>
 </form>
 <?php
     include 'includes/footer.php';

@@ -16,7 +16,7 @@ $cmd->execute();
 $users = $cmd->fetchAll();
 
 // Display the data in a table.
-echo '<table class="table"><thead><th>Id</th><th>Email Address</th></thead>';
+echo '<table class="table table-striped table-hover"><thead class="table-dark"><th>Id</th><th>Email Address</th><th></th><th></th></thead>';
 
 foreach ($users as $u) {
     echo '<tr><td>' . $u['userId'] . '</td><td>' . $u['email'] . '</td>
