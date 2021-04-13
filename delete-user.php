@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Deleting User... Bye Felicia</title>
-</head>
-<body>
 <?php
+$title = "Deleting User... Bye Felicia";
+include 'includes/header.php';
 include 'includes/authenticate.php';
 
 $userId = $_GET['userId'];
@@ -24,7 +19,7 @@ if (is_numeric($userId)) {
         $db = null;
     }
     catch (exception $e) {
-        header('location:error.php');
+        header('location:db-error.php');
         exit();
     }
 }

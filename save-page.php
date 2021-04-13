@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Saving New Page...</title>
-</head>
-<body>
 <?php
+$title = "Saving Page";
+include 'includes/header.php';
+include 'includes/authenticate.php';
 
 $pageName = $_POST['pageName'];
 $pageContent = $_POST['pageContent'];
@@ -23,19 +19,25 @@ else if (empty(trim($pageContent))) {
 }
 
 if ($valid) {
-    include 'includes/db-connect.php';
+        try{
+        include 'includes/db-connect.php';
 
-    $sql = "INSERT INTO pages (pageName, pageContent)
-        VALUES (:pageName, :pageContent)";
+        $sql = "INSERT INTO pages (pageName, pageContent)
+            VALUES (:pageName, :pageContent)";
 
-    $cmd = $db->prepare($sql);
+        $cmd = $db->prepare($sql);
 
-    $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
-    $cmd->bindParam(':pageContent', $pageContent, PDO::PARAM_STR, 1000);
+        $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
+        $cmd->bindParam(':pageContent', $pageContent, PDO::PARAM_STR, 1000);
 
-    $cmd->execute();
+        $cmd->execute();
 
-    $db = null;
+        $db = null;
 
-    header('location:pages.php');
+        header('location:pages.php');
+    }
+    catch (exception $e) {
+        header('location:db-error.php');
+        exit();
+    }
 }

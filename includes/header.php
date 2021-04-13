@@ -2,7 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>David's Community</title>
+        <!-- By assigning unique $title variables on each page, they can all have unique titles in their header. -->
+        <title>David's Community | <?php echo $title;?></title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
@@ -15,22 +16,26 @@
         <!-- Navigation goes here -->
 <?php 
 
-include 'includes/db-connect.php';
+try{
+    include 'includes/db-connect.php';
 
-$sql = "SELECT pageId, pageName FROM pages";
+    $sql = "SELECT pageId, pageName FROM pages";
 
-$cmd = $db->prepare($sql);
-$cmd->execute();
+    $cmd = $db->prepare($sql);
+    $cmd->execute();
 
-$pages = $cmd->fetchAll();
+    $pages = $cmd->fetchAll();
 
-echo '<ul>';
-foreach ($pages as $p) {
-    echo '<li><a href="index.php?pageId='. $p['pageId'] . '">'. $p['pageName'] . '</a></li>';
+    echo '<ul>';
+    foreach ($pages as $p) {
+        echo '<li><a href="index.php?pageId='. $p['pageId'] . '">'. $p['pageName'] . '</a></li>';
+    }
+
+    echo '</ul>';
 }
-
-echo '</ul>'
-
+catch (exception $e) {
+    header('location:db-error.php');
+}
 ?>
 
 <ul>
@@ -62,3 +67,4 @@ else { ?>
 <?php } ?>
             </ul>
         </nav>
+        <h2><?php echo $title;?></h2>

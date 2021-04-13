@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>David's Community</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    </head>
-
-    <body>
 <?php
+$title = "Saving User";
+include 'includes/header.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -40,43 +32,47 @@ if ($password != $conPass) {
 }
 
 if ($valid) {
-    include 'includes/db-connect.php';
+    try{
+        include 'includes/db-connect.php';
 
-    // Check if the email address is already in use.
+        // Check if the email address is already in use.
 
-    $sql = "SELECT * FROM CMSusers
-                WHERE email = :email";
-    
-    $cmd = $db->prepare($sql);
-    $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
-    $cmd->execute();
+        $sql = "SELECT * FROM CMSusers
+                    WHERE email = :email";
+        
+        $cmd = $db->prepare($sql);
+        $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
+        $cmd->execute();
 
-    $user = $cmd->fetch();
-    if (!empty($user)) {
-        echo 'User already exists';
+        $user = $cmd->fetch();
+        if (!empty($user)) {
+            echo 'User already exists';
+            $db = null;
+            exit();
+        }
+
+        // Add the new user to the database after hashing their password.
+        $sql = "INSERT INTO CMSusers (email, password) VALUES (:email, :password)";
+
+        // Hash the password
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $cmd = $db->prepare($sql);
+        $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
+        $cmd->bindParam(':password', $password, PDO::PARAM_STR, 255);
+
+        $cmd->execute();
+
         $db = null;
+
+        echo "User Saved!";
+
+        header('location:login.php');
+    }
+    catch (exception $e) {
+        header('location:db-error.php');
         exit();
     }
-
-    // Add the new user to the database after hashing their password.
-    $sql = "INSERT INTO CMSusers (email, password) VALUES (:email, :password)";
-
-    // Hash the password
-    $password = password_hash($password, PASSWORD_DEFAULT);
-    $cmd = $db->prepare($sql);
-    $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
-    $cmd->bindParam(':password', $password, PDO::PARAM_STR, 255);
-
-    $cmd->execute();
-
-    $db = null;
-
-    echo "User Saved!";
-
-    header('location:login.php');
 }
-
-
 ?>
     </body>
 </html>

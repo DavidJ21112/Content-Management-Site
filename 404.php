@@ -1,5 +1,5 @@
 <?php
-$title = 'Not Found';
+$title = '404 Page Not Found';
 include 'header.php';
 ?>
         <main>

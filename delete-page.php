@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Deleting Page...</title>
-</head>
-<body>
 <?php
+$title = "Deleting Page...";
+include 'includes/header.php';
 include 'includes/authenticate.php';
 
 $pageId = $_GET['pageId'];
@@ -24,7 +19,7 @@ if (is_numeric($pageId)) {
         $db = null;
     }
     catch (exception $e) {
-        header('location:error.php');
+        header('location:db-error.php');
         exit();
     }
 }

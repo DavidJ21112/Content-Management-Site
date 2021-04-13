@@ -1,4 +1,5 @@
 <?php 
+$title = "Update User";
 include 'includes/header.php';
 include 'includes/authenticate.php';
 
@@ -17,7 +18,7 @@ if (!empty($_GET['userId'])) {
         $db = null;
     }
     catch (exception $e) {
-        header('location:error.php');
+        header('location:db-error.php');
         exit();
     }
 }

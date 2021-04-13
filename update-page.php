@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Updating Page...</title>
-</head>
-<body>
 <?php
+$title = "Updating Page";
+include 'includes/header.php';
+include 'includes/authenticate.php';
 
 $pageName = $_POST['pageName'];
 $pageContent = $_POST['pageContent'];
@@ -24,20 +20,26 @@ else if (empty(trim($pageContent))) {
 }
 
 if ($valid) {
-    include 'includes/db-connect.php';
+    try{
+        include 'includes/db-connect.php';
 
-    $sql = "UPDATE pages 
-                SET pageName = :pageName, pageContent = :pageContent
-                WHERE pageId = :pageId";
+        $sql = "UPDATE pages 
+                    SET pageName = :pageName, pageContent = :pageContent
+                    WHERE pageId = :pageId";
 
-    $cmd = $db->prepare($sql);
+        $cmd = $db->prepare($sql);
 
-    $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
-    $cmd->bindParam(':pageContent', $pageContent, PDO::PARAM_STR, 1000);
-    $cmd->bindParam(':pageId', $pageId, PDO::PARAM_INT);
-    $cmd->execute();
+        $cmd->bindParam(':pageName', $pageName, PDO::PARAM_STR, 50);
+        $cmd->bindParam(':pageContent', $pageContent, PDO::PARAM_STR, 1000);
+        $cmd->bindParam(':pageId', $pageId, PDO::PARAM_INT);
+        $cmd->execute();
 
-    $db = null;
+        $db = null;
 
-    header('location:pages.php');
+        header('location:pages.php');
+    }
+    catch (exception $e) {
+        header('location:db-error.php');
+        exit();
+    }
 }

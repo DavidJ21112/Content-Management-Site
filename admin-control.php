@@ -1,4 +1,5 @@
 <?php 
+$title = "Admin Controls";
 include 'includes/header.php';
 include 'includes/authenticate.php';
 ?>

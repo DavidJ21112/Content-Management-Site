@@ -1,4 +1,5 @@
 <?php 
+$title = "Users";
 include 'includes/header.php';
 include 'includes/authenticate.php';
 

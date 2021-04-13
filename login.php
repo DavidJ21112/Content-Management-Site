@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>David's Community</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    </head>
-    <body>
-        <header>
-            <h1>David's Community</h1>
-        </header>
+<?php 
+$title = "Login";
+include 'includes/header.php';
+?>
         <form method="post" action="validate-login.php">
             <fieldset>
                 <label for="email">Email Address: </label>

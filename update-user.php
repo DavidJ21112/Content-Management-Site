@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Updating user...</title>
-</head>
-<body>
 <?php
+$title = "Updating User Info";
+include 'includes/header.php';
+include 'includes/authenticate.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -35,24 +31,30 @@ if ($password != $conPass) {
 }
 
 if ($valid) {
-    include 'includes/db-connect.php';
+    try {
+        include 'includes/db-connect.php';
 
-    $sql = "UPDATE CMSusers 
-                SET email = :email, password= :password
-                WHERE userId = :userId";
+        $sql = "UPDATE CMSusers 
+                    SET email = :email, password= :password
+                    WHERE userId = :userId";
 
-    $cmd = $db->prepare($sql);
+        $cmd = $db->prepare($sql);
 
-    // Don't forget to hash the new password!
-    $password = password_hash($password, PASSWORD_DEFAULT);
+        // Don't forget to hash the new password!
+        $password = password_hash($password, PASSWORD_DEFAULT);
 
-    $cmd = $db->prepare($sql);
-    $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
-    $cmd->bindParam(':password', $password, PDO::PARAM_STR, 255);
-    $cmd->bindParam(':userId', $userId, PDO::PARAM_INT);
-    $cmd->execute();
+        $cmd = $db->prepare($sql);
+        $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
+        $cmd->bindParam(':password', $password, PDO::PARAM_STR, 255);
+        $cmd->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $cmd->execute();
 
-    $db = null;
+        $db = null;
 
-    header('location:user-list.php');
+        header('location:user-list.php');
+    }
+    catch (exception $e) {
+        header('location:db-error.php');
+        exit();
+    }
 }

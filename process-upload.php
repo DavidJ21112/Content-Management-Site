@@ -1,5 +1,7 @@
 <?php
+$title = "Upload Confirmation";
 include 'includes/header.php';
+include 'includes/authenticate.php';
 
 if ($_FILES['logo']['name'] != null) {
     $name = $_FILES['logo']['name'];

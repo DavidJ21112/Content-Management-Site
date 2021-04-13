@@ -1,4 +1,5 @@
 <?php 
+$title = "Create New Page";
 include 'includes/header.php';
 include 'includes/authenticate.php';
 ?>
