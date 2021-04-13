@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <title>David's Community | <?php echo $title;?></title>
         <link rel="icon" type="image/jpeg" href="images/icon.jpg" />
+        <link rel="stylesheet" type="text.css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
