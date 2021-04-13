@@ -2,6 +2,7 @@
 $title = "Updating Page";
 include 'includes/header.php';
 include 'includes/authenticate.php';
+// This page will update the database to reflect changes made to a page by an authenticated user.
 
 $pageName = $_POST['pageName'];
 $pageContent = $_POST['pageContent'];

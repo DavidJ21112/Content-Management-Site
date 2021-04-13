@@ -3,7 +3,7 @@ $title = "Users";
 include 'includes/header.php';
 include 'includes/authenticate.php';
 
-// This page will display all users registered in the database to logged in users.
+// This page will display all users registered in the database, if the current user is authenticated. Users can be edited and deleted.
 
 include 'includes/db-connect.php';
 
@@ -16,12 +16,12 @@ $cmd->execute();
 $users = $cmd->fetchAll();
 
 // Display the data in a table.
-echo '<table><thead><th>Id</th><th>Email Address</th></thead>';
+echo '<table class="table"><thead><th>Id</th><th>Email Address</th></thead>';
 
 foreach ($users as $u) {
     echo '<tr><td>' . $u['userId'] . '</td><td>' . $u['email'] . '</td>
-    <td><a href="user-edit.php?userId=' . $u['userId'] . '">Edit</a></td>
-    <td><a href="delete-user.php?userId=' . $u['userId'] . '" onclick="return confirmDelete();">Delete</a></td></tr>';
+    <td><a href="user-edit.php?userId=' . $u['userId'] . '" class="btn btn-warning">Edit</a></td>
+    <td><a href="delete-user.php?userId=' . $u['userId'] . '" onclick="return confirmDelete();" class="btn btn-danger">Delete</a></td></tr>';
 
 }
 

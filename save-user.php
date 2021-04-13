@@ -1,6 +1,7 @@
 <?php
 $title = "Saving User";
 include 'includes/header.php';
+// This page will add a newly registered user's information to the database.
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -14,7 +15,7 @@ if (empty($email)) {
     $valid = false;
 }
 
-// I discovered the PHP FILTER options at: https://www.php.net/manual/en/filter.examples.validation.php
+// I discovered the PHP FILTER options in the official documentation at: https://www.php.net/manual/en/filter.examples.validation.php
 // Used here to check if what was entered in the email field follows proper email format.
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "Please enter a valid email address.";

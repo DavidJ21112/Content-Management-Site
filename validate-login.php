@@ -1,5 +1,5 @@
 <?php
-
+// This page will validate a user's login data by comparing it to the database using the userId and password_verify function.
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -11,6 +11,7 @@ $cmd->bindParam(':email', $email, PDO::PARAM_STR, 50);
 $cmd->execute();
 $user = $cmd->fetch();
 
+// If the password is valid, a session begins and the user is redirected to index.php.
 if (!empty($user)) {
     if (password_verify($password, $user['password'])) {
         session_start();

@@ -2,6 +2,7 @@
 $title = "Update User";
 include 'includes/header.php';
 include 'includes/authenticate.php';
+// This page will allow authenticated users to edit the information of other users.
 
 if (!empty($_GET['userId'])) {
     $userId = $_GET['userId'];
@@ -29,7 +30,7 @@ else {
 }
 ?>
 
-<form method="post" action="update-user.php">
+<form method="post" action="update-user.php" enctype="multipart/form-data">
 <fieldset>
     <label for="email">Email Address: </label>
     <input type="email" name="email" id="email" maxlength="50" required value="<?php $user['email']?>"></input>

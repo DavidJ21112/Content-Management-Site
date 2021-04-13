@@ -2,6 +2,7 @@
 $title = "Deleting User... Bye Felicia";
 include 'includes/header.php';
 include 'includes/authenticate.php';
+// This page will process user deletion requests from an authenticated user.
 
 $userId = $_GET['userId'];
 

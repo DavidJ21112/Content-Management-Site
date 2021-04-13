@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- This header is identical in every way to the main header except for the absence of the bottom <h2> element. If I had more time I would refactor the original header, but this will work for now. -->
     <head>
         <meta charset="UTF-8">
-        <!-- By assigning unique $title variables on each page, they can all have unique titles in their header. -->
         <title>David's Community | <?php echo $title;?></title>
         <link rel="icon" type="image/jpeg" href="images/icon.jpg" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
     <body>
-        <!-- <header>
-            
-        </header> -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px;">
-        <!-- Navigation goes here -->
         <div class="container-fluid">
             <div class="d-flex" style="width: 100%;">
             

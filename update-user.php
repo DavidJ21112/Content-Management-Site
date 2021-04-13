@@ -2,6 +2,7 @@
 $title = "Updating User Info";
 include 'includes/header.php';
 include 'includes/authenticate.php';
+// This page will update the database to reflect changes made to user information by an authenticated user.
 
 $email = $_POST['email'];
 $password = $_POST['password'];

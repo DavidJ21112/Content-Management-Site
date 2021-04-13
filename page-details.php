@@ -2,10 +2,10 @@
 $title = "Create New Page";
 include 'includes/header.php';
 include 'includes/authenticate.php';
+// This page will allow authenticated users to create new pages on the site. The form will be posted to a save page.
 ?>
 
-<!-- This page will allow logged in users to create new pages on the site. -->
-<form method="post" action="save-page.php">
+<form method="post" action="save-page.php" enctype="multipart/form-data">
     <fieldset class="form-group">
         <label for='pageName'>Title of Page (50 Characters Max):</label>
         <input class="form-control" name="pageName" id="pageName" maxlength="50" required ></input>

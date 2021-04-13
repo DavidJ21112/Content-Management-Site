@@ -2,6 +2,7 @@
 $title = "Deleting Page...";
 include 'includes/header.php';
 include 'includes/authenticate.php';
+// This page will process page deletion requests for authenticated users.
 
 $pageId = $_GET['pageId'];
 

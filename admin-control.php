@@ -2,6 +2,7 @@
 $title = "Admin Controls";
 include 'includes/header.php';
 include 'includes/authenticate.php';
+// This page acts as a central panel for all administrative controls. User must be authenticated to access.
 ?>
 
 <nav>

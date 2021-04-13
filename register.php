@@ -1,6 +1,7 @@
 <?php
 $title = "Register New User";
 include 'includes/header.php';
+// This page will allow a new user to register their email address and password to the database, with some basic validation. The form data will be posted to a save file.
 ?>
         <form method="post" action="save-user.php">
             <fieldset>

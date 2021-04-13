@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Nearly every page on the site will have this header file at its top. -->
     <head>
         <meta charset="UTF-8">
         <!-- By assigning unique $title variables on each page, they can all have unique titles in their header. -->
         <title>David's Community | <?php echo $title;?></title>
+        <!-- The favicon will use the same image as the page's primary icon.-->
         <link rel="icon" type="image/jpeg" href="images/icon.jpg" />
+        <!-- This site is styled by a mix of Bootstrap and custom styles -->
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
     <body>
-        <!-- <header>
-            
-        </header> -->
+        <!-- The navbar contains the main icon, the site's name, links to each database "page" generated dynamically, user login/logout controls, and the admin control panel for logged in users. -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px;">
-        <!-- Navigation goes here -->
         <div class="container-fluid">
             <div class="d-flex" style="width: 100%;">
             
@@ -76,4 +76,5 @@ else { ?>
         </div>
         </nav>
         <div class="container">
+            <!-- The $title variable will also create the page's specific <h2> header. I realized too late that this would need to be omitted on the index, so I had to make a second, otherwise identical header file for it. -->
             <h2><?php echo $title;?></h2>

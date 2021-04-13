@@ -1,6 +1,7 @@
 <?php 
 $title = "Login";
 include 'includes/header.php';
+// This page contains a form for an existing user to enter their email and password. It will send this info to a validation page.
 ?>
         <form method="post" action="validate-login.php">
             <fieldset>

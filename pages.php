@@ -3,7 +3,7 @@ $title = "Pages";
 include 'includes/header.php';
 include 'includes/authenticate.php';
 
-// This page will allow logged in users to view a list of all pages on the site, with the option to delete them.
+// This page will allow authenticated users to view a list of all pages on the site, with the option to edit and delete them.
 try {
     include 'includes/db-connect.php';
 
