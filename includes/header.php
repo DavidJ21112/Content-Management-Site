@@ -17,8 +17,8 @@
         <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <div class="d-flex">
-            
-                <img src="images/icon.jpg" alt="The wonderful icon of our community" height="100" width="100" />
+                <!-- The icon will double as a link to the home page. -->
+                <a href="index.php"><img src="images/icon.jpg" alt="The wonderful icon of our community" height="100" width="100" /></a>
             
             <h1 class="p-2">David's Community</h1>
 <?php 
