@@ -21,11 +21,13 @@ echo '<table><thead><th>Id</th><th>Email Address</th></thead>';
 foreach ($users as $u) {
     echo '<tr><td>' . $u['userId'] . '</td><td>' . $u['email'] . '</td>
     <td><a href="user-edit.php?userId=' . $u['userId'] . '">Edit</a></td>
-    <td><a href="delete-user.php?userId=' . $u['userId'] . '">Delete</a></td></tr>';
+    <td><a href="delete-user.php?userId=' . $u['userId'] . '" onclick="return confirmDelete();">Delete</a></td></tr>';
 
 }
 
 echo '</table>';
 
-$db = null
+$db = null;
+
+include 'includes/footer.php';
 ?>

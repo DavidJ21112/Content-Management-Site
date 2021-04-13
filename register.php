@@ -17,5 +17,6 @@ include 'includes/header.php';
             </fieldset>
             <button>Register!</button>
         </form>
-    </body>
-</html>
+<?php
+    include 'includes/footer.php';
+?>

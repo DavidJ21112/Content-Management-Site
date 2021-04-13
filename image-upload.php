@@ -7,5 +7,6 @@ include 'includes/authenticate.php';
         <input name="logo" id="logo" type="file" accept=".jpg, .jpeg, .png" />
         <button>Upload</button>
     </form>
-</body>
-</html>
+<?php
+include 'includes/footer.php';
+?>

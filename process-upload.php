@@ -28,7 +28,5 @@ else {
     echo 'No file uploaded';
 }
 
+    include 'includes/footer.php';
 ?>
-
-</body>
-</html>

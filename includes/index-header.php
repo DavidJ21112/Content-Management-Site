@@ -76,4 +76,5 @@ else { ?>
         </div>
         </nav>
         <div class="container">
-            <h2><?php echo $title;?></h2>
+
+<!-- Title h2 is removed specifically for the index, hence the need for a unique header. -->

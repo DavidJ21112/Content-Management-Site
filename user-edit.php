@@ -48,5 +48,6 @@ else {
 </fieldset>
 <button>Save</button>
 </form>
-</body>
-</html>
+<?php
+    include 'includes/footer.php';
+?>

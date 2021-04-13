@@ -13,5 +13,6 @@ include 'includes/header.php';
             </fieldset>
             <button>Sign In To Our Awesome Community</button>
         </form>
-    </body>
-</html>
+<?php
+include 'includes/footer.php';
+?>

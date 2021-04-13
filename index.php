@@ -1,6 +1,6 @@
 <?php 
 $title="Welcome";
-include 'includes/header.php';
+include 'includes/index-header.php';
 
 try {
     include 'includes/db-connect.php';
@@ -19,14 +19,15 @@ try {
     $pages = $cmd->fetch();
     $db = null;
 
+    if (!empty($pageId)){
     echo '<h3>' . $pages['pageName'] . '</h3>';
     echo '<p>' . $pages['pageContent'] . '</p>';
+    }
 }
 catch (exception $e) {
     header('location:db-error.php');
     exit();
 }
-?>
 
-    </body>
-</html>
+include 'includes/footer.php';
+?>

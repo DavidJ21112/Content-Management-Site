@@ -16,12 +16,12 @@ try {
     $pages = $cmd->fetchAll();
 
     // Display the data in a table.
-    echo '<table><thead><th>Id</th><th>Page Name</th></thead>';
+    echo '<table class="table"><thead><th>Id</th><th>Page Name</th><th></th><th></th></thead>';
 
     foreach ($pages as $p) {
         echo '<tr><td>' . $p['pageId'] . '</td><td>' . $p['pageName'] . '</td>
-            <td><a href="page-edit.php?pageId=' . $p['pageId'] . '">Edit</a></td>
-            <td><a href="delete-page.php?pageId=' . $p['pageId'] . '">Delete</a></td></tr>';
+            <td><a class="btn btn-warning" href="page-edit.php?pageId=' . $p['pageId'] . '">Edit</a></td>
+            <td><a class="btn btn-danger" href="delete-page.php?pageId=' . $p['pageId'] . '" onclick="return confirmDelete();">Delete</a></td></tr>';
     }
 
     echo '</table>';
@@ -32,4 +32,6 @@ catch (exception $e) {
     header('location:db-error.php');
     exit();
 }
+
+    include 'includes/footer.php';
 ?>

@@ -25,5 +25,6 @@ if (is_numeric($pageId)) {
 }
 header('location:pages.php');
 ?>
-</body>
-</html>
+<?php
+    include 'includes/footer.php';
+?>

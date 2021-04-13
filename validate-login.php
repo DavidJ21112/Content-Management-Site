@@ -25,4 +25,5 @@ else {
     header('location:login.php?invalid=true');
 }
 
+include 'includes/footer.php';
 ?>

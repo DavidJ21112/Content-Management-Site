@@ -6,15 +6,16 @@ include 'includes/authenticate.php';
 
 <!-- This page will allow logged in users to create new pages on the site. -->
 <form method="post" action="save-page.php">
-    <fieldset>
+    <fieldset class="form-group">
         <label for='pageName'>Title of Page (50 Characters Max):</label>
-        <input name="pageName" id="pageName" maxlength="50" required ></input>
+        <input class="form-control" name="pageName" id="pageName" maxlength="50" required ></input>
     </fieldset>
-    <fieldset>
+    <fieldset class="form-group">
         <label for='pageContent'>Page Content (1000 Characters Max):</label>
-        <textarea name="pageContent" id="pageContent" maxlength="1000" required ></textarea>
+        <textarea class="form-control" name="pageContent" id="pageContent" maxlength="1000" required ></textarea>
     </fieldset>
-    <button>Save</button>
+    <button class="btn btn-primary">Save</button>
 </form>
-</body>
-</html>
+<?php
+    include 'includes/footer.php';
+?>

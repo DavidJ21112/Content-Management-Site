@@ -24,6 +24,6 @@ if (is_numeric($userId)) {
     }
 }
 header('location:user-list.php');
+
+include 'includes/footer.php';
 ?>
-</body>
-</html>

@@ -7,5 +7,6 @@ include 'header.php';
     <p>We've encountered a connection error. Please try again later. </p>
 </main>
 
-</body>
-</html>
+<?php
+    include 'includes/footer.php';
+?>

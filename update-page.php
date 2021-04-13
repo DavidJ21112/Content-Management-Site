@@ -43,3 +43,6 @@ if ($valid) {
         exit();
     }
 }
+
+include 'includes/footer.php';
+?>
